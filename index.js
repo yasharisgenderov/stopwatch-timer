@@ -10,7 +10,6 @@ class TimerClass extends DomElements {
   second = 0;
   timerArray = [];
   lapArray = [];
-  a;
   b;
 
   constructor() {
