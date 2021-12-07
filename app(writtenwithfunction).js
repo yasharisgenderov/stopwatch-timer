@@ -1,43 +1,42 @@
-let second = 0;
-let timerArray = [];
-let lapArray = [];
-let a;
+let secondCounter = 0;
+let timerSection = document.querySelector("#timerSection")
+let playSection = document.querySelector("#play");
+let stopSection = document.querySelector("#stop");
+let lapSection = document.querySelector("#lap");
+let lapArea = document.querySelector("#lapArea");
+let a
+let timerArray = []
+let lapArray = []
 
-function Timer(a) {
-  let seconds = a;
-  let minute = Math.floor(seconds / 60);
-  let leftSecond = seconds - minute * 60;
+function Timer(timerSecond) {
+  let second = timerSecond;
+  let minute = Math.floor(timerSecond / 60);
+  let leftSecond = second - minute * 60;
 
   let result = `${minute < 10 ? "0" + minute : minute}:${
     leftSecond < 10 ? "0" + leftSecond : leftSecond
   }`;
-  return result;
+ return result;
 }
 
-
-
-document.querySelector("#play").onclick = function () {
+playSection.addEventListener("click", function () {
   a = setInterval(function () {
-    second++;
-    console.log(Timer(second));
-    timerArray.push(Timer(second));
-    console.log(timerArray);
-    document.querySelector("#timerSection").innerHTML = Timer(second);
+    secondCounter++;
+    Timer(secondCounter);
+    timerSection.innerHTML = Timer(secondCounter)
+    timerArray.push(Timer(secondCounter))
+    console.log(timerArray)
   }, 1000);
-};
+});
 
-document.querySelector("#stop").onclick = function () {
+stopSection.addEventListener("click", function () {
   clearInterval(a);
-};
+});
 
-document.querySelector("#lap").onclick = function () {
-  let lapTime = timerArray[timerArray.length - 1];
-  lapArray.push(lapTime);
-  document.querySelector("#lapArea").innerHTML = lapArray
-    .map((q, i) => {
-      return `<li style = "list-style:none"> Your lap is :  ${q} </li>`;
-    })
-    .join("");
-  console.log(lapArray);
-};
-
+lapSection.addEventListener("click",function(){
+    let lapItem = timerArray[timerArray.length-1]
+    lapArray.push(lapItem)
+    lapArea.innerHTML = lapArray.map((q,i)=>{
+        return `<li style = "list-style:none"> Your lap is :  ${q} </li>`;
+    }).join("")
+})
