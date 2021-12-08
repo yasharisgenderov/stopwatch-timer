@@ -46,7 +46,7 @@ class TimerClass extends DomElements {
     this.lapArray.push(lapTime);
     this.lapArea.innerHTML = this.lapArray
       .map((q, i) => {
-        return `<li style = "list-style:none"> Your lap is :  ${q} </li>`;
+        return `<li style = "list-style:none;margin-bottom:8px;color:cadetblue"> ${i+1}. Your lap is :  ${q} </li>`;
       })
       .join("");
   }

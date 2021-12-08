@@ -5,17 +5,40 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
 </head>
-<body>
-        <h1 id="timerSection">00:00</h1>
-        <button id="play">Play</button>
-        <button id="stop">Stop</button>
-        <button id="lap">Lap</button>
+<body style="background-color: cadetblue;">
+    <div class="timerSect">
+        
+            <h1 id="timerSection" class="text-center mb-5 display-2">00:00</h1>
+        
+            <div class="buttons d-flex justify-content-center flex-row mb-5">
+                <button id="play" class="buttonRound">Play</button>
+                <button id="stop" class="buttonRound">Stop</button>
+                <button id="lap"  class="buttonRound">Lap</button>
+            </div>
+            <div class="lapsSect">
+                <div class="container">
+                    <div class="jumbotron jumbotron-fluid">
+                        <div class="container">
+                            <h2 class="text-center mt-0">Laps :</h2>
+                            <hr>
+                            <ul id="lapArea" class="p-0 d-flex align-items-center flex-column h4"></ul>
+                        </div>
+                      </div>
+                </div>
+                
+                <!-- <ul id="lapArea" class="p-0 d-flex align-items-center flex-column h4"></ul> -->
+            </div>
+    </div>
+        
 
-        <ul id="lapArea"></ul>
+       
 
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
     <script src="./index.js"></script>
 </body>
 </html>
